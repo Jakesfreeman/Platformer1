@@ -78,7 +78,7 @@ public class Controller1 : MonoBehaviour
 
         if (anim.GetBool("isGrounded") == false)
         {
-            anim.Play("Player_jump");
+            anim.Play("Player_jump 0");
         }
     }
 }
