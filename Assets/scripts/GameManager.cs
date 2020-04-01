@@ -6,7 +6,14 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
+
+
     public int currentScene = 0;
+
+
+    public int playerScore = 0;
+
+
     void Awake()
     {
         if (Instance == null)
@@ -14,6 +21,7 @@ public class GameManager : MonoBehaviour
             Instance = this;
             DontDestroyOnLoad(this);
         }
+
         else
         {
             Destroy(this.gameObject);
@@ -21,13 +29,16 @@ public class GameManager : MonoBehaviour
         }
     }
 
+
     public void LoadLevel(string levelToLoad)
     {
         SceneManager.LoadScene(levelToLoad);
+        currentScene++;
+
     }
 
 
-    public void loadlevel(int indexToLoad)
+    public void Loadlevel(int indexToLoad)
     {
         SceneManager.LoadScene(indexToLoad);
         currentScene = indexToLoad;
