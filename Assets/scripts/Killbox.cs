@@ -4,15 +4,12 @@ using UnityEngine;
 
 public class Killbox : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    void OnTriggerExit2D(Collider2D other)
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        if (other.gameObject.tag == "Player")
+        {
+            Destroy(other.gameObject);
+        }
+        Destroy(other.gameObject);
     }
 }
